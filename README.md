@@ -18,13 +18,14 @@ This repo is a clone of https://github.com/varadbhogayata/varadbhogayata.github.
   </kbd>
 </p>
 
-## Installation & Deployment 📦
-- Clone the repository and modify the content of <b>index.html</b> according to your requirement.
-- Add or remove images from `Kynnnnnna.github.io/assets/img/` directory as per your requirement.
-- I highly recommend to use [Github Pages](https://create-react-app.dev/docs/deployment/#github-pages) to deploy the website the EASIEST WAY.
-- To deploy your website, first you need to create github repository with name `<your-github-username>.github.io`. Please don't give any other name.
-- Push the generated code to the `master` branch of this repository.
-- <b>NOTE:</b> Make sure to set `analyticsId` from your Google Analytics account inside the Google Analytics script tag, if you want to use your own Google Analytics account.
+## ECE444 Activities
+- Activity 1 (1pt): a screenshot
+- Activity 2 (1pt): two screenshots (repo and the deployed website)
+- Activity 3 (1pt): two screenshots (repo and the deployed website)
+- Activity 4 (1pt): two screenshots (repo and the "places travelled" page in deployed website)
+- Activity 5 (1pt): a screenshot of top three projects
+### Activitiy 1 screenshot of the repo just after cloning from varadbhogayata
+![Screenshot for Activity 1](assets/ece444_screenshots/activity1_img1.jpg)
 
 ## Sections 📚
 ✔️ About me\
