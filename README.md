@@ -11,12 +11,12 @@ This repo is a clone of https://github.com/varadbhogayata/varadbhogayata.github.
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 ### Website Preview
-<p align="center"> 
+<!-- p align="center"> 
   <kbd>
     <a href="https://Kynnnnnna.github.io" target="_blank"><img src="examples/preview.gif">
   </a>
   </kbd>
-</p>
+</!-->
 
 ## ECE444 Activities
 - Activity 1 (1pt): a screenshot
@@ -25,7 +25,11 @@ This repo is a clone of https://github.com/varadbhogayata/varadbhogayata.github.
 - Activity 4 (1pt): two screenshots (repo and the "places travelled" page in deployed website)
 - Activity 5 (1pt): a screenshot of top three projects
 ### Activitiy 1 screenshot of the repo just after cloning from varadbhogayata
-![Screenshot for Activity 1](assets/ece444_screenshots/activity1_img1.jpg)
+![Screenshot for Activity 1](/assets/ece444_screenshots/activity1_img1.jpg)
+### Activity 2 screenshot of the repo and the deployed website after updating with my own information
+![Screenshot of repo for Activity 2](/assets/ece444_screenshots/activity2_img1.jpg)
+![Screenshot of repo for Activity 2](/assets/ece444_screenshots/activity2_img2.jpg)
+
 
 ## Sections 📚
 ✔️ About me\
