@@ -32,6 +32,10 @@ This repo is a clone of https://github.com/varadbhogayata/varadbhogayata.github.
 ### Activity 3 screenshot of the repo and the deployed website after updating the color theme
 ![Screenshot of the repo after Activity 3](/assets/ece444_screenshots/activity3_img1.jpg)
 ![Screenshot of the website after Activity 3](/assets/ece444_screenshots/activity3_img2.jpg)
+### Activity 4 screenshot of the repo and the deployed website after adding places travelled section
+![Screenshot of the repo after Activity 4](/assets/ece444_screenshots/activity4_img1.jpg)
+![Screenshot of the website after Activity 4](/assets/ece444_screenshots/activity4_img2.jpg)
+
 
 
 ## Sections 📚
