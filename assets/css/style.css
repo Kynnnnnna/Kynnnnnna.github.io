@@ -1,3 +1,11 @@
+:root{
+  --blue: #6F8AA7;
+  --blue-dark: #4F647E;
+  --pink: #D7B3BE;
+  --pink-dark: #C48FA0;
+  --pink-light: #F4E7EC;
+}
+
 .profile-pic {
   position: relative;
   max-width:130px;
@@ -11,7 +19,7 @@
   /* background-size: cover;  */
   margin: -31px; 
   margin-left:-7px;
-  border: 6px solid rgba(0, 77, 64, 0.4); 
+  border: 6px solid rgba(111, 138, 6167, 0.45); 
   border-radius: 50% !important;
 }
 
@@ -85,7 +93,7 @@
   position: relative;
   padding: 11px 35px;
   background: #fff;
-  color: #00796b;
+  color: var(--blue);
   border: 2px solid #fff;
   font-weight: 600;
   font-size: 15px;
@@ -94,11 +102,6 @@
   border-radius: 5px;
   -webkit-border-radius: 5px;
 }
-
-/* .readme:hover{
-  color: white;
-  background-color: #00796b;
-} */
 
 .contactme {
   position: relative;
@@ -116,7 +119,7 @@
 }
 
 .contactme:hover{
-  color: #00796b;
+  color: var(--blue);
   background-color: white;
 }
 /* main body */
@@ -128,31 +131,9 @@ body {
   font-size: 18px;
 }
 
-/* body {
-  color: black;
-  font-size: 18px;
-} */
-
-/* main a -- links */
-
-/* a {
-  color: #009688;
-} */
-
 a {
-  color: #004d40;
+  color: var(--blue-dark);
 }
-
-/* main blockqoute */
-
-/* blockquote {
-  border-left: 5px solid #795548;
-  color: #795548;
-  font-size: 125%;
-  font-weight: 400;
-  margin: 20px 0;
-  padding-left: 1.5rem;
-} */
 
 blockquote {
   border-left: 5px solid #795548;
@@ -180,24 +161,11 @@ nav {
   height: 0;
 }
 
-/* nav {
-  background: rgb(149, 126, 212);
-  box-shadow: none;
-  height: 0;
-} */
-
 nav i {
   padding: 0 15px;
   position: relative;
   top: 5px;
 }
-
-/* main */
-
-/* main {
-  background: url(../../assets/img/bg.png) repeat;
-  padding-left: 190px;
-} */
 
 main {
   background: url(../../assets/img/bg.png) repeat;
@@ -227,17 +195,9 @@ ul.side-nav li {
   padding: 0;
 }
 
-/* ul.side-nav.fixed a {
-  box-sizing: content-box;
-  color: rgb(48, 122, 207);
-  display: block;
-  line-height: 100%;
-  padding: 10px 0 12px;
-} */
-
 ul.side-nav.fixed a {
   box-sizing: content-box;
-  color: rgb(16, 202, 56);
+  color: var(--blue-dark);
   display: block;
   line-height: 100%;
   padding: 10px 0 12px;
@@ -247,14 +207,6 @@ ul.table-of-contents li.logo a.active, ul.table-of-contents li.logo a:hover {
   border: none;
   font-weight: 200;
 }
-
-/* ul.side-nav.fixed li.logo {
-  background-color: #fafafa;
-  border-bottom: 1px solid #ddd;
-  box-sizing: content-box;
-  min-height: 90px;
-  padding: 30px 30px 40px;
-} */
 
 ul.side-nav.fixed li.logo {
   background-color: #fafafa;
@@ -271,7 +223,8 @@ ul.side-nav.fixed li.logo a {
 
 ul.table-of-contents li:not(.logo) a.active, ul.table-of-contents li:not(.logo) a:hover {
   background-color: #fafafa;
-  border-left: 3px solid;
+  border-left: 3px solid var(--pink) !important;
+  color: var(--blue-dark) !important;
 }
 
 ul.side-nav.fixed.table-of-contents li:not(.logo) a span, ul#slide-out li:not(.logo) a span {
@@ -312,15 +265,8 @@ h3 {
   height: 100vh;
 }
 
-/* Original */
-
-/* #intro.section {
-  background: url(../../assets/img/white-ai-wallpaper.jpg) no-repeat top center/cover;
-  position: relative;
-} */
-
 #intro.section {
-  background: #a7ffeb repeat;
+  background: linear-gradient(135deg, rgba(111,138,167,095), rgba(215,179,190,0.95)) !important;
   position: relative;
 }
 
@@ -331,13 +277,6 @@ h3 {
   position: absolute;
   top: 0;
 }
-
-/* #intro.section .container *:not(span) {
-  font-weight: 300;
-  line-height: 150%;
-  padding: 0 30px;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-} */
 
 #intro.section .container *:not(span) {
   font-weight: 300;
@@ -356,7 +295,7 @@ h3 {
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: linear-gradient(0deg, rgba(0,0,0,0.25), rgba(255,255,255,0.04)) ! important;
   height: 100%;
   left: 0;
   position: absolute;
@@ -367,7 +306,7 @@ h3 {
 .waves-effect.waves-blue .waves-ripple {
   /* The alpha value allows the text and background color
    of the button to still show through. */
-  background-color: rgba(33, 150, 243, 0.2);
+  background-color: rgba(111, 138, 167, 0.28);
 }
 
 .card {
@@ -383,13 +322,14 @@ h3 {
 
 .card li a {
   margin-right: 0;
-  color: #333;
-  border-bottom: 2px solid #ffab40;
+  color: var(--blue-dark) !important;
+  border-bottom: 2px solid var(--pink) !important;
 }
 
 .card li a:hover {
-  color: #333;
+  color: var(--blue-dark);
   font-weight: 500;
+  border-bottom-color: var(--pink-dark) !important;
 }
 
 .card .card-content {
@@ -466,14 +406,8 @@ a.hoverline {
   -webkit-transition: 0.25s all;
 }
 
-/* main a.hoverline */
-
-/* a.hoverline:hover {
-  border-bottom: 3px solid #24305e !important;
-} */
-
 a.hoverline:hover {
-  border-bottom: 3px solid #004d40 !important;
+  border-bottom: 3px solid var(--pink) !important;
 }
 
 #skills .card.large {
@@ -546,25 +480,15 @@ small {
   color: #666 !important;
 }
 
-/* main .teal-text */
-
 .teal-text {
-  color: #008073 !important;
+  color: var(--blue) !important;
 }
-
-/* .teal-text {
-  color: #0b5e86 !important;
-} */
 
 /* .teal */
 
 .teal {
-  background-color: #008073 !important;
+  background-color: var(--blue) !important;
 }
-
-/* .teal {
-  background-color: #00695c !important;
-} */
 
 @media (min-width: 1200px) {
   #experience .container {
@@ -602,7 +526,7 @@ small {
     position: absolute;
   }
   nav a.button-collapse, nav a.button-collapse i {
-    color: #009688;
+    color: var(--blue) !important;
     height: 56px;
     line-height: 56px;
   }
