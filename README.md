@@ -11,12 +11,12 @@ This repo is a clone of https://github.com/varadbhogayata/varadbhogayata.github.
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 ### Website Preview
-<!-- p align="center"> 
+<p align="center"> 
   <kbd>
-    <a href="https://Kynnnnnna.github.io" target="_blank"><img src="examples/preview.gif">
+    <a href="https://Kynnnnnna.github.io" target="_blank"><img src="examples/preview.jpg">
   </a>
   </kbd>
-</!-->
+</p>
 
 ## ECE444 Activities
 - Activity 1 (1pt): a screenshot
@@ -35,7 +35,9 @@ This repo is a clone of https://github.com/varadbhogayata/varadbhogayata.github.
 ### Activity 4 screenshot of the repo and the deployed website after adding places travelled section
 ![Screenshot of the repo after Activity 4](/assets/ece444_screenshots/activity4_img1.jpg)
 ![Screenshot of the website after Activity 4](/assets/ece444_screenshots/activity4_img2.jpg)
-
+### Acticity 5 screenshot of the repo and the deployed website after adding dynamic projects section
+![Screenshot of the repo after Activity 5](/assets/ece444_screenshots/activity5_img1.jpg)
+![Screenshot of the website after Activity 5](/assets/ece444_screenshots/activity5_img2.jpg)
 
 
 ## Sections 📚
@@ -44,6 +46,7 @@ This repo is a clone of https://github.com/varadbhogayata/varadbhogayata.github.
 ✔️ Projects \
 ✔️ Skills \
 ✔️ Education\
+✔️ Places Travelled\
 ✔️ Contact Info\
 ✔️ Resume
 
@@ -54,23 +57,3 @@ To view a live example, **[click here](https://Kynnnnnna.github.io/)**
 * [<b>Materialize</b>](https://materializecss.com/) - A CSS framework to get Google's Material Design components.
 * [<b>Typed.js</b>](https://mattboldt.com/demos/typed-js/) - JavaScript Library
 
-## Contributing 💡
-#### Step 1
-
-- **Option 1**
-    - 🍴 Fork this repo!
-
-- **Option 2**
-    - 👯 Clone this repo to your local machine.
-
-
-#### Step 2
-
-- **Build your code** 🔨🔨🔨
-
-#### Step 3
-
-- 🔃 Create a new pull request.
-
-## License 📄
-This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details.
