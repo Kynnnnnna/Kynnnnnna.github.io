@@ -396,6 +396,15 @@
         </div>
       </div>
     </section>
+    <section id="recent-projects-section" class="section scrollspy">
+      <h3 class="page-title white-text teal">Recent Projects</h3>
+      <div class="container">
+        <div id ="recent-projects" class="row"></div>
+        <div class="center" style="margin-top: 16px;">
+          <a id="load-more-projects" class="btn waves-effect waves-light teal">Load More</a>
+        </div>
+      </div>
+    </section>
 
     <!-- Fifth Section: Skills -->
     <section id="skills" class="section scrollspy">
@@ -548,7 +557,7 @@
         </div>
       </div>
     </section>
-    
+
     <!-- Ninth Section: Contact -->
     <section id="contact" class="section scrollspy full-height">
       <h3 class="page-title white-text teal">Contact</h3>
@@ -610,6 +619,19 @@
         closeOnClick: true
       })
     })
+  </script>
+  
+  <!-- Load More Projects Script -->
+  <script>
+    fetch("assets/data/projects.json")
+      .then (r=> r.json())
+      .then (data => {window.Projects = data;})
+      .then(()=>{
+        const s = document.createElement("script");
+        s.src = "assets/vendor/recentProjects.js";
+        document.body.appendChild(s);
+      })
+      .catch(console.error);
   </script>
 </body>
 

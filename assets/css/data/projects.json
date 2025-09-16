@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Robotic Arm (AI-based Control)",
+    "image": "/assets/img/project-robotic-arm.jpg",
+    "date": "2025-09-02",
+    "description": "Capstone build with custom PCB, ESP32 control, and AI face tracking.",
+    "highlights": [
+      "Designed & 3D-printed components in SolidWorks; custom PCB and motor control on ESP32.",
+      "Bluetooth & wireless USB comms for synchronized motion between remote and arm.",
+      "Integrated Google Face Mesh for dynamic user-aware tracking."
+    ],
+    "github": "https://github.com/Kynnnnnna"
+  },
+  {
+    "title": "Geographic Information System (Top 1 Optimization)",
+    "image": "/assets/img/project-gis.jpg",
+    "date": "2023-04-30",
+    "description": "Interactive C++ GIS with real-time data and optimized routing.",
+    "highlights": [
+      "Implemented Dijkstra, A*, Greedy; experimented with RL for path optimization.",
+      "Integrated OpenStreetMap & Libcurl APIs; responsive GUI with GTK."
+    ],
+    "github": "https://github.com/Kynnnnnna"
+  },
+  {
+    "title": "Crazy Arcade",
+    "image": "/assets/img/crazy_arcade.jpg",
+    "date": "2023-04-30",
+    "description": "Real-time tile engine on FPGA in bare-metal C with memory-mapped VGA/PS-2 peripherals and deterministic, timer-driven events.",
+    "highlights": [
+      "Timer interrupts + compact FSMs orchestrate bomb lifecycle independently of frame rate.",
+      "Bit-packed BRAM tile grid; explosion propagation via four-way ray-casting.",
+      "VSYNC-aligned double-buffered VGA; PS/2 scan-code parsing; fixed-timestep loop."
+    ],
+    "github": "https://github.com/Kynnnnnna"
+  }
+]
