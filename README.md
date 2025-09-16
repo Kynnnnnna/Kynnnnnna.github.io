@@ -25,10 +25,13 @@ This repo is a clone of https://github.com/varadbhogayata/varadbhogayata.github.
 - Activity 4 (1pt): two screenshots (repo and the "places travelled" page in deployed website)
 - Activity 5 (1pt): a screenshot of top three projects
 ### Activitiy 1 screenshot of the repo just after cloning from varadbhogayata
-![Screenshot for Activity 1](/assets/ece444_screenshots/activity1_img1.jpg)
+![Screenshot after Activity 1](/assets/ece444_screenshots/activity1_img1.jpg)
 ### Activity 2 screenshot of the repo and the deployed website after updating with my own information
-![Screenshot of repo for Activity 2](/assets/ece444_screenshots/activity2_img1.jpg)
-![Screenshot of repo for Activity 2](/assets/ece444_screenshots/activity2_img2.jpg)
+![Screenshot of the repo after Activity 2](/assets/ece444_screenshots/activity2_img1.jpg)
+![Screenshot of the website after Activity 2](/assets/ece444_screenshots/activity2_img2.jpg)
+### Activity 3 screenshot of the repo and the deployed website after updating the color theme
+![Screenshot of the repo after Activity 3](/assets/ece444_screenshots/activity3_img1.jpg)
+![Screenshot of the website after Activity 3](/assets/ece444_screenshots/activity3_img2.jpg)
 
 
 ## Sections 📚
