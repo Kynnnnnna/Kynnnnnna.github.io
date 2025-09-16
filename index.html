@@ -623,12 +623,12 @@
   
   <!-- Load More Projects Script -->
   <script>
-    fetch("assets/data/projects.json")
+    fetch("/assets/data/projects.json")
       .then (r=> r.json())
       .then (data => {window.Projects = data;})
       .then(()=>{
         const s = document.createElement("script");
-        s.src = "assets/vendor/recentProjects.js";
+        s.src = "/assets/vendor/recentProjects.js";
         document.body.appendChild(s);
       })
       .catch(console.error);
