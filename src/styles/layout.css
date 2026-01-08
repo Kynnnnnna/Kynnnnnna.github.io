@@ -1,0 +1,39 @@
+/* Spacing */
+
+#app{
+  width: 100%;
+  display: block;
+}
+
+.page-section{
+  padding: 92px 18px;
+}
+
+.page-section--hero{
+  min-height: 92vh;
+  display: grid;
+  place-items: center;
+  padding-top: 120px;
+}
+
+.container{
+  width: min(var(--container), calc(100% - 36px));
+  margin: 0 auto;
+}
+
+.section-title{
+  font-family: var(--font-title);
+  font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+  margin: 0 0 14px;
+}
+
+.section-sub{
+  color: var(--muted);
+  margin: 0 0 26px;
+  line-height: 1.55;
+}
+
+@media (max-width: 600px){
+  .page-section{ padding: 78px 14px; }
+  .page-section--hero{ padding-top: 110px; }
+}
