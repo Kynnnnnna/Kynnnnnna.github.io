@@ -63,5 +63,25 @@ export const projects = [
     gallery: [
       "/assets/images/projects/ece361-chat-system/01.jpg"
     ]
+  },
+  {
+    id: "ece297-google-map",
+    title: "Google Maps–Like GIS Application",
+    short: "Worldwide map application with search, routing, and optimized pathfinding.",
+    description:
+      "A Google Maps–style GIS application that supports worldwide map exploration, location search, and route planning. The system focuses on performance and responsiveness through map tiling and optimized pathfinding algorithms, enabling fast rendering and efficient navigation across large geographic datasets.",
+    tech: ["C++", "GIS", "A*", "Dijkstra", "Pathfinding", "Algorithms"],
+    year: 2023,
+    links: {
+      live: null,
+      code: null,
+    },
+    cover: "/assets/images/projects/ece297-google-map/cover.jpg",
+    gallery: [
+      "/assets/images/projects/ece297-google-map/1.jpg",
+      "/assets/images/projects/ece297-google-map/2.jpg",
+      "/assets/images/projects/ece297-google-map/3.jpg",
+      "/assets/images/projects/ece297-google-map/4.jpg"
+    ]
   }
 ];
