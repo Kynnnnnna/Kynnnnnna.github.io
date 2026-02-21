@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel Pet - ECE444</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body data-page="project-detail">
+
+  <div id="nav-root"></div>
+
+  <main class="page-section">
+    <div class="container glass card">
+      <h1 class="section-title">Pixel Pet - ECE444 Software Engineering</h1>
+      <p class="section-sub">
+        A gamified task manager where completing real-world tasks helps your virtual pet grow and evolve.
+      </p>
+
+      <h3>Overview</h3>
+      <p>
+        Pixel Pet is a Tamagotchi-inspired productivity web application designed to make task management more engaging and motivating. Instead of static to-do lists, users care for a virtual pet whose growth, mood, and progression reflect their real-world productivity. Completing tasks, maintaining streaks, and achieving milestones directly influence the pet’s development, turning everyday work into a playful, rewarding experience.
+      </p>
+
+      <p>
+        The system is built as a microservices-based web application. A React + Vite frontend communicates with a Flask-based API Gateway, which routes requests to independent backend services for user management, tasks, pet state, and activity tracking. Services are containerized with Docker to support local development and scalable deployment.
+      </p>
+
+      <div class="project-links">
+        <a class="btn" href="https://github.com/ECE444-2025FALL-UofT/project-1-web-application-development-group6-pixelnova" target="_blank">
+          Source Code
+        </a>
+      </div>
+
+      <div class="project-gallery" id="projectGallery"></div>
+    </div>
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

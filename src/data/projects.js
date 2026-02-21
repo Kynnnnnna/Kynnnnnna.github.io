@@ -22,6 +22,32 @@ export const projects = [
     ]
   },
   {
+    id: "ece444-pixel-pet",
+    title: "Tamagotchi-Inspired Productivity App",
+    short: "Gamified task manager where completing real-world tasks grows a virtual pet.",
+    description:
+      "A Tamagotchi-inspired productivity web app that turns task completion into visible pet growth. Users manage recurring and one-off tasks while a virtual companion evolves based on progress, streaks, and milestones.",
+    tech: ["React", "Vite", "Python", "Flask", "Docker", "Microservices"],
+    year: 2025,
+    links: {
+      live: null,
+      code: "https://github.com/ECE444-2025FALL-UofT/project-1-web-application-development-group6-pixelnova"
+    },
+    cover: "/assets/images/projects/ece444-pixel-pet/cover.jpg",
+    gallery: [
+      "/assets/images/projects/ece444-pixel-pet/1.jpg",
+      "/assets/images/projects/ece444-pixel-pet/2.jpg",
+      "/assets/images/projects/ece444-pixel-pet/3.jpg",
+      "/assets/images/projects/ece444-pixel-pet/4.jpg",
+      "/assets/images/projects/ece444-pixel-pet/5.jpg",
+      "/assets/images/projects/ece444-pixel-pet/6.jpg",
+      "/assets/images/projects/ece444-pixel-pet/7.jpg",
+      "/assets/images/projects/ece444-pixel-pet/8.jpg",
+      "/assets/images/projects/ece444-pixel-pet/9.jpg",
+      "/assets/images/projects/ece444-pixel-pet/10.jpg"
+    ]
+  },
+  {
     id: "ece361-chat-system",
     title: "Multi-User Chat System (C, TCP)",
     short: "Terminal-based multi-user chat system using TCP sockets and threads.",
