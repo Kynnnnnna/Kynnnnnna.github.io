@@ -1,19 +1,49 @@
+// src/main.js
 import "./styles/theme.css";
 import "./styles/layout.css";
 import "./styles/components.css";
 
-import { mountNav } from "./ui/nav.js";
+import { mountNav, highlightActiveNav } from "./components/nav.js";
+import { animatePageEnter } from "./utils/pageEnter.js";
 
-import { mountHome } from "./ui/sections/home.js";
-import { mountAbout } from "./ui/sections/about.js";
-import { mountProjects } from "./ui/sections/projects.js";
-import { mountArtbook } from "./ui/sections/artbook.js";
-import { mountBlog } from "./ui/sections/blog.js";
+// Always-run logic
+const navRoot = document.querySelector("#nav-root");
+if (navRoot) {
+  mountNav(navRoot);
+  highlightActiveNav();
+}
 
-mountNav(document.querySelector("#nav-root"));
+animatePageEnter();
 
-mountHome(document.querySelector("#home"));
-mountAbout(document.querySelector("#about"));
-mountProjects(document.querySelector("#projects"));
-mountArtbook(document.querySelector("#artbook"));
-mountBlog(document.querySelector("#blog"));
+// Page-specific logic
+const page = document.body.dataset.page;
+
+switch (page) {
+  case "home":
+    import("./pages/home.js");
+    break;
+
+  case "projects":
+    import("./pages/projects.js");
+    break;
+
+  case "project-detail":
+    import("./pages/project-detail.js");
+    break;
+
+  case "artbook":
+    import("./pages/artbook.js");
+    break;
+
+  case "about":
+    import("./pages/about.js");
+    break;
+
+  case "blog":
+    import("./pages/blog.js")
+    break;
+
+  default:
+    // no-op
+    break;
+}

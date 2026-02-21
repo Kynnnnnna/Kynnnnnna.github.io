@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi User Chat System - ECE361 Computer Networks</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body data-page="project-detail">
+
+  <div id="nav-root"></div>
+
+  <main class="page-section">
+    <div class="container glass card">
+      <h1 class="section-title">Multi User Chat System - ECE361 Computer Networks</h1>
+      <p class="section-sub">
+        Terminal-based real-time chat application using TCP sockets and multithreading in C.
+      </p>
+
+      <h3>Overview</h3>
+      <p>
+        This project implements a full client–server chat system in C using TCP sockets and POSIX
+        threads. Users can authenticate, create or join chat sessions, send real-time messages,
+        switch between sessions, and invite other users to sessions. The server handles multiple
+        concurrent clients and manages shared state using mutex-protected data structures.
+      </p>
+
+      <!--
+      <h3>Key Features</h3>
+      <ul>
+        <li>User authentication (username/password)</li>
+        <li>Multiple chat sessions (create / join / leave)</li>
+        <li>Real-time messaging within sessions</li>
+        <li>Session switching</li>
+        <li>User invitations to sessions</li>
+        <li>Thread-safe server state using mutexes</li>
+        <li>Custom packet-based protocol</li>
+      </ul>
+      -->
+
+      <div class="project-links">
+        <a class="btn" href="https://github.com/Kynnnnnna/Multi-User-Chat-System-ECE361-Computer-Networks" target="_blank">
+          Source Code
+        </a>
+      </div>
+
+      <div class="project-gallery" id="projectGallery"></div>
+    </div>
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
