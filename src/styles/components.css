@@ -132,8 +132,15 @@
   gap: 12px;
   align-items: center;
 }
+
 .project-card{
-  min-height: 180px;
+  min-height: 280px;
+  height: 280px;
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
 }
 
 .project-card-grid{
@@ -167,6 +174,18 @@
   min-height: 160px;
   object-fit: cover;
   display: block;
+}
+
+.project-card.anim-out{
+  opacity: 0;
+  transform: translateX(var(--slide, 8px));
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.project-card.anim-in{
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 220ms ease, transform 220ms ease;
 }
 
 /* Mobile: stack vertically (image on top looks nicer on phones) */

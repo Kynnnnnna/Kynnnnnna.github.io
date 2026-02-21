@@ -47,25 +47,43 @@ function mountProjectsCarousel() {
 
   if (!card || !prev || !next) return;
 
-  const update = () => renderProject(card, projects[index]);
+  let direction = 1;
+
+  const update = () => {
+    card.style.setProperty("--slide", direction === 1 ? "-8px" : "8px");
+
+    card.classList.remove("anim-in");
+    card.classList.add("anim-out");
+
+    setTimeout(() => {
+      renderProject(card, projects[index]);
+
+      requestAnimationFrame(() => {
+        card.classList.remove("anim-out");
+        card.classList.add("anim-in");
+      });
+    }, 160);
+  };
 
   prev.addEventListener("click", () => {
+    direction = -1;
     index = (index - 1 + projects.length) % projects.length;
     update();
   });
 
   next.addEventListener("click", () => {
+    direction = 1;
     index = (index + 1) % projects.length;
     update();
   });
 
-  // Keyboard support (nice touch)
   window.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") prev.click();
     if (e.key === "ArrowRight") next.click();
   });
 
-  update();
+  renderProject(card, projects[index]);
+  card.classList.add("anim-in");
 }
 
 mountProjectsCarousel();

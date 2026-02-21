@@ -5,7 +5,7 @@ export const projects = [
     short: "Posture-aware phone holder using real-time face and head-pose tracking.",
     description:
       "A computer vision–driven phone holder that estimates head pose from a live camera feed and uses closed-loop control to reposition a 4-DOF robotic arm for more ergonomic viewing.",
-    tech: ["Python", "OpenVINO", "Computer Vision", "Embedded Linux", "Robotics"],
+    tech: ["Python", "Arduino", "Head Pose Recognition", "PCB Design"],
     year: 2026,
     links: {
       live: null,
@@ -13,7 +13,7 @@ export const projects = [
     },
     cover: "/assets/images/projects/ece496-head-up/cover.jpg",
     gallery: [
-      "/assets/images/projects/ece496-head-up/cover.jpg",
+      "/assets/images/projects/ece496-head-up/0.jpg",
       "/assets/images/projects/ece496-head-up/1.jpg",
       "/assets/images/projects/ece496-head-up/2.jpg",
       "/assets/images/projects/ece496-head-up/3.jpg",
