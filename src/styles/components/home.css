@@ -1,0 +1,26 @@
+/* Home hero text */
+.hero-frame{
+  place-self: center;
+  width: min(400px, 100%);
+  height: min(400px, 100%);
+  padding: clamp(18px, 3vw, 28px);
+  text-align: center;
+  align-items: center;
+}
+
+.hero-title{
+  font-family: var(--font-title);
+  font-size: clamp(2.4rem, 6.2vw, 4rem);
+  line-height: 0.98;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+.hero-title .line-break{
+  display: block;
+}
+
+.hero-note{
+  margin: 14px 0 0;
+  color: var(--muted);
+  line-height: 1.55;
+}

@@ -25,6 +25,7 @@
     "three": "^0.182.0"
   },
   "devDependencies": {
-    "vite": "^7.3.0"
+    "vite": "^7.3.0",
+    "vite-plugin-image-optimizer": "^2.0.3"
   }
 }

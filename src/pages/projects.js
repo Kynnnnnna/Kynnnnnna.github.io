@@ -18,7 +18,7 @@ function renderProject(card, p) {
         <div class="project-actions">
           ${p.links.live ? `<a class="btn" href="${p.links.live}" target="_blank">Live</a>` : ""}
           ${p.links.code ? `<a class="btn btn--code" href="${p.links.code}" target="_blank">Code</a>` : ""}
-          <a class="btn btn--details" href="/projects/${p.id}/">Details</a>
+          <a class="btn btn--details" href="/project/?id=${p.id}">Details</a>
         </div>
 
         <div style="margin-top:14px; color:var(--muted); font-size:0.9rem;">
@@ -27,7 +27,7 @@ function renderProject(card, p) {
       </div>
 
       ${p.cover ? `
-        <a class="project-card-cover" href="/projects/${p.id}/" aria-label="View ${p.title} details">
+        <a class="project-card-cover" href="/project/?id=${p.id}" aria-label="View ${p.title} details">
           <img
             src="${p.cover}"
             alt="${p.title} cover"

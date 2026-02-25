@@ -1,0 +1,25 @@
+.nav-island {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+}
+
+.nav-link {
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: var(--radius-pill);
+}
+.nav-link:hover {
+  background: rgba(255,255,255,0.55);
+  text-decoration: none;
+}
+.nav-link--active {
+  background: rgba(255,255,255,0.75);
+  box-shadow: inset 0 0 0 1px var(--border);
+}

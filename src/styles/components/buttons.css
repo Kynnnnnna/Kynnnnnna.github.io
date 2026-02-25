@@ -1,0 +1,26 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+  user-select: none;
+}
+.btn:hover { background: rgba(255,255,255,0.68); }
+.btn:active { transform: translateY(1px); }
+
+.btn--code { background: rgba(255,255,255,0.35); }
+.btn--code:hover { background: rgba(255, 255, 255, 0.9); }
+
+.btn--details {
+  background: linear-gradient(180deg, #fff9db, #fff3bf);
+  box-shadow: inset 0 0 0 1px var(--border);
+  font-weight: 500;
+}
+.btn--details:hover { background: rgba(255, 255, 255, 0.6); }

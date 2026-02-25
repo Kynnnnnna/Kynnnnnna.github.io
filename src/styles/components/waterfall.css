@@ -1,0 +1,28 @@
+.waterfall {
+  column-count: 3;
+  column-gap: 14px;
+}
+.waterfall-item {
+  break-inside: avoid;
+  margin: 0 0 14px;
+  padding: 14px;
+}
+.waterfall-thumb {
+  width: 100%;
+  height: 180px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.35);
+}
+.waterfall-caption {
+  margin: 10px 2px 0;
+  color: var(--muted);
+  line-height: 1.4;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 950px) { .waterfall { column-count: 2; } }
+@media (max-width: 600px) { 
+  .waterfall { column-count: 1; }
+  .waterfall-thumb { height: 160px; }
+}

@@ -1,7 +1,14 @@
 // src/main.js
 import "./styles/theme.css";
 import "./styles/layout.css";
-import "./styles/components.css";
+
+// Components
+import "./styles/components/home.css";
+import "./styles/components/buttons.css";
+import "./styles/components/cards.css";
+import "./styles/components/nav.css";
+import "./styles/components/projects.css";
+import "./styles/components/waterfall.css";
 
 import { mountNav, highlightActiveNav } from "./components/nav.js";
 import { animatePageEnter } from "./utils/pageEnter.js";
