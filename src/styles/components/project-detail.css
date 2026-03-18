@@ -1,0 +1,162 @@
+/* --- Detail Header --- */
+.detail-header {
+  margin-bottom: 32px;
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.detail-title {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 0 0 12px;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.detail-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.detail-year {
+  font-weight: 600;
+  color: var(--muted);
+  background: rgba(255,255,255,0.5);
+  padding: 4px 12px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+}
+
+/* --- Content Layout --- */
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.detail-text h3 {
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  margin-top: 0;
+}
+
+.detail-text p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(0,0,0,0.8);
+  max-width: 800px;
+}
+
+/* --- Fun Pagination Footer --- */
+.project-pagination {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+
+.pagination-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+  min-height: 220px;
+}
+
+.pagination-btn:hover {
+  text-decoration: none;
+  transform: translateY(-6px);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Align text to opposite sides */
+.pagination-next { align-items: flex-end; text-align: right; }
+.pagination-prev { align-items: flex-start; text-align: left; }
+
+.pagination-content {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Slide the text outward slightly on hover */
+.pagination-prev:hover .pagination-content {
+  transform: translateX(12px);
+  color:antiquewhite;
+}
+.pagination-next:hover .pagination-content {
+  transform: translateX(-12px);
+  color:antiquewhite;
+}
+
+.pagination-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 8px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.pagination-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  line-height: 1.2;
+}
+
+/* The Magic Background Reveal */
+.pagination-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #000; /* Darkens the image slightly so text remains readable */
+}
+
+.pagination-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35; /* Subtle transparency so it acts as a texture */
+  filter: saturate(1.2);
+}
+
+/* Trigger the bloom effect on hover */
+.pagination-btn:hover .pagination-bg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* --- Mobile Breakpoints --- */
+@media (max-width: 768px) {
+  .project-pagination {
+    grid-template-columns: 1fr; /* Stack vertically on phones */
+    gap: 12px;
+  }
+  .pagination-btn {
+    min-height: 160px;
+    padding: 30px 24px;
+  }
+  .pagination-next {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .pagination-next:hover .pagination-content { transform: translateX(12px); }
+}

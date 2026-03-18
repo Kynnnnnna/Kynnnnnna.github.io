@@ -1,0 +1,41 @@
+/* Hide the default cursor only on devices with a mouse */
+@media (pointer: fine) {
+  body, a, button, input {
+    cursor: none !important;
+  }
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px; 
+  border-radius: 50%;
+  background: var(--text);
+  pointer-events: none; 
+  z-index: 99999;
+  
+  transform: translate3d(-100px, -100px, 0);
+  will-change: transform, width, height;
+  
+  /* Sped up from 0.3s to 0.2s for a punchier snap */
+  transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              height 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              margin 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.2s ease,
+              border 0.2s ease,
+              backdrop-filter 0.2s ease;
+}
+
+/* --- The Hover State (Clean Glass Ring) --- */
+.custom-cursor.is-hovering {
+  width: 54px; /* Slightly smaller so it isn't overwhelming */
+  height: 54px;
+  margin: -27px 0 0 -27px;
+  background: rgba(255, 255, 255, 0.05); /* Almost completely transparent */
+  border: 1.5px solid rgba(0, 0, 0, 0.15); /* A crisp, defined edge */
+  backdrop-filter: blur(2px); /* Barely there, just enough to catch the eye */
+  -webkit-backdrop-filter: blur(2px);
+}

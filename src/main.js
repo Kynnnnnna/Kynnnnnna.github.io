@@ -6,12 +6,15 @@ import "./styles/layout.css";
 import "./styles/components/home.css";
 import "./styles/components/buttons.css";
 import "./styles/components/cards.css";
+import "./styles/components/cursor.css";
 import "./styles/components/nav.css";
+import "./styles/components/project-detail.css";
 import "./styles/components/projects.css";
 import "./styles/components/waterfall.css";
 
 import { mountNav, highlightActiveNav } from "./components/nav.js";
 import { animatePageEnter } from "./utils/pageEnter.js";
+import { initCursor } from "./components/cursor.js";
 
 // Always-run logic
 const navRoot = document.querySelector("#nav-root");
@@ -19,6 +22,8 @@ if (navRoot) {
   mountNav(navRoot);
   highlightActiveNav();
 }
+
+initCursor();
 
 animatePageEnter();
 
