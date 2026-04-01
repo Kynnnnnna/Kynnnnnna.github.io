@@ -6,7 +6,13 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
-.glass--strong { background: var(--glass-strong); }
+.glass--strong {
+  background: var(--glass-strong);
+}
 
-.card { padding: 22px; }
-.pill { border-radius: var(--radius-pill); }
+.card {
+  padding: 22px;
+}
+.pill {
+  border-radius: var(--radius-pill);
+}

@@ -1,31 +1,194 @@
 /* Home hero text */
-.hero-frame{
+.hero-frame {
   place-self: center;
   width: min(400px, 100%);
   height: min(400px, 100%);
   padding: clamp(18px, 3vw, 28px);
   text-align: center;
   align-items: center;
+  position: relative;
+  z-index: 3;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
-.hero-title{
+.hero-title {
   font-family: var(--font-title);
   font-size: clamp(2.4rem, 6.2vw, 4rem);
   line-height: 0.98;
   margin: 0;
   letter-spacing: 0.3px;
 }
-.hero-title .line-break{
+.hero-title .line-break {
   display: block;
 }
 
-.hero-note{
+.hero-note {
   margin: 14px 0 0;
   color: var(--muted);
   line-height: 1.55;
 }
 
-/* About page profile layout */
+/* =========================
+    HERO WATER SCENE
+   ========================= */
+
+.page-section--hero {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  overflow: hidden;
+}
+
+/* Container for water + card */
+.hero-scene {
+  --water-top: 58%;
+  --water-feather: 12%;
+
+  position: relative;
+  width: min(100%, 1100px);
+  height: min(78svh, 760px);
+  min-height: 520px;
+  border-radius: 28px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+
+.hero-scene::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 20% 18%,
+      rgba(255, 255, 255, 0.35),
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(200, 240, 255, 0.25),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 50% 80%,
+      rgba(120, 200, 255, 0.18),
+      transparent 30%
+    );
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Three.js mount */
+.hero-webgl {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hero-webgl canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* =========================
+   GLASS + FLOAT REFINEMENT
+   ========================= */
+
+.hero-frame {
+  /* KEEP your size rules above */
+  z-index: 2;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.55),
+      rgba(255, 255, 255, 0.35)
+    ),
+    rgba(255, 255, 255, 0.2);
+
+  box-shadow:
+    0 30px 70px rgba(30, 80, 120, 0.18),
+    0 10px 25px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+
+  backdrop-filter: blur(16px) saturate(1.1);
+  -webkit-backdrop-filter: blur(16px) saturate(1.1);
+}
+
+/* glass highlight sheen */
+.hero-frame::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.05) 45%,
+    rgba(255, 255, 255, 0.2)
+  );
+  pointer-events: none;
+}
+
+/* floating shadow (VERY important for realism) */
+.hero-frame::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -36px;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 26px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(20, 40, 60, 0.22),
+    rgba(20, 40, 60, 0.08) 45%,
+    transparent 70%
+  );
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 700px) {
+  .hero-scene {
+    height: 72svh;
+    min-height: 480px;
+    --water-top: 48%;
+    --water-feather: 16%;
+  }
+
+  .hero-frame {
+    width: min(88vw, 380px);
+    height: auto;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 9vw, 3.2rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-frame {
+    transform: none !important;
+  }
+}
+
 .about-profile {
   display: flex;
   align-items: flex-start;
@@ -60,7 +223,8 @@
     flex-direction: column;
   }
 
-  .about-profile, .about-text {
+  .about-profile,
+  .about-text {
     width: 100%;
   }
 

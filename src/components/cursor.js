@@ -22,13 +22,17 @@ export function initCursor() {
   // 5. Add hover effects to interactive elements
   const addHoverEvents = () => {
     const interactives = document.querySelectorAll("a, button, .btn");
-    
-    interactives.forEach(el => {
+
+    interactives.forEach((el) => {
       // Avoid adding multiple listeners if this function runs again
-      if (el.dataset.cursorAttached) return; 
-      
-      el.addEventListener("mouseenter", () => cursor.classList.add("is-hovering"));
-      el.addEventListener("mouseleave", () => cursor.classList.remove("is-hovering"));
+      if (el.dataset.cursorAttached) return;
+
+      el.addEventListener("mouseenter", () =>
+        cursor.classList.add("is-hovering"),
+      );
+      el.addEventListener("mouseleave", () =>
+        cursor.classList.remove("is-hovering"),
+      );
       el.dataset.cursorAttached = "true";
     });
   };
@@ -43,7 +47,9 @@ export function initCursor() {
   // 6. Click reaction for non-interactive zones
   window.addEventListener("click", (event) => {
     const target = event.target;
-    const isInteractive = !!target.closest("a, button, .btn, input, textarea, select, label");
+    const isInteractive = !!target.closest(
+      "a, button, .btn, input, textarea, select, label",
+    );
 
     if (!isInteractive) {
       cursor.classList.add("is-clicked");
@@ -60,7 +66,7 @@ export function initCursor() {
     cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
     requestAnimationFrame(render);
   }
-  
+
   // Start the loop
   render();
 }

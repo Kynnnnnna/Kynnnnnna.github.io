@@ -4,7 +4,7 @@ const container = document.querySelector("#project-container");
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
-const currentIndex = projects.findIndex(p => p.id === id);
+const currentIndex = projects.findIndex((p) => p.id === id);
 
 if (currentIndex === -1 || !container) {
   if (container) {
@@ -26,13 +26,21 @@ if (currentIndex === -1 || !container) {
   const prevProject = projects[prevIndex];
   const nextProject = projects[nextIndex];
 
-  const techHTML = project.tech.map(t => `<span class="tech-pill">${t}</span>`).join("");
-  const liveLink = project.links.live ? `<a class="btn" href="${project.links.live}" target="_blank">Live App</a>` : '';
-  const codeLink = project.links.code ? `<a class="btn btn--code" href="${project.links.code}" target="_blank">Source Code</a>` : '';
+  const techHTML = project.tech
+    .map((t) => `<span class="tech-pill">${t}</span>`)
+    .join("");
+  const liveLink = project.links.live
+    ? `<a class="btn" href="${project.links.live}" target="_blank">Live App</a>`
+    : "";
+  const codeLink = project.links.code
+    ? `<a class="btn btn--code" href="${project.links.code}" target="_blank">Source Code</a>`
+    : "";
 
-  const galleryHTML = project.gallery 
+  const galleryHTML = project.gallery
     ? `<div class="project-gallery">
-        ${project.gallery.map((src, i) => `
+        ${project.gallery
+          .map(
+            (src, i) => `
           <img 
             class="gallery-img" 
             src="${src}" 
@@ -41,9 +49,11 @@ if (currentIndex === -1 || !container) {
             decoding="async"
             style="animation-delay: ${i * 0.1}s" 
           />
-        `).join("")}
+        `,
+          )
+          .join("")}
        </div>`
-    : '';
+    : "";
 
   // Inject layout without the top nav, but with the massive footer nav
   container.innerHTML = `

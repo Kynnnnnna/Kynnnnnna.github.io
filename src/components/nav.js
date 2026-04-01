@@ -14,7 +14,7 @@ export function highlightActiveNav() {
   const path = window.location.pathname.replace(/\/$/, "") || "/";
   const links = document.querySelectorAll(".nav-link");
 
-  links.forEach(link => {
+  links.forEach((link) => {
     const href = link.getAttribute("href").replace(/\/$/, "") || "/";
 
     if (href !== "/" && path.startsWith(href)) {

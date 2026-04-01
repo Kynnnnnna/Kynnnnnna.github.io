@@ -52,7 +52,7 @@ switch (page) {
     break;
 
   case "blog":
-    import("./pages/blog.js")
+    import("./pages/blog.js");
     break;
 
   default:
