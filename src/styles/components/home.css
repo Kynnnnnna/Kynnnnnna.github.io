@@ -1,122 +1,21 @@
-/* Home hero text */
+/* =========================
+   HERO TEXT
+   ========================= */
+
 .hero-frame {
   place-self: center;
   width: min(400px, 100%);
   height: min(400px, 100%);
   padding: clamp(18px, 3vw, 28px);
-  text-align: center;
-  align-items: center;
-  position: relative;
-  z-index: 3;
-  transform-style: preserve-3d;
-  will-change: transform;
-}
-
-.hero-title {
-  font-family: var(--font-title);
-  font-size: clamp(2.4rem, 6.2vw, 5rem);
-  line-height: 0.98;
-  margin: 0;
-  letter-spacing: 0.3px;
-}
-.hero-title .line-break {
-  display: block;
-}
-
-.hero-note {
-  margin: 14px 0 0;
-  color: var(--muted);
-  line-height: 1.55;
-}
-
-/* =========================
-    HERO WATER SCENE
-   ========================= */
-
-.page-section--hero {
-  min-height: 100svh;
-  display: grid;
-  place-items: center;
-  padding: 24px;
-  overflow: hidden;
-}
-
-/* Container for water + card */
-.hero-scene {
-  --water-top: 58%;
-  --water-feather: 12%;
 
   position: relative;
-  width: min(100%, 1100px);
-  height: min(78svh, 760px);
-  min-height: 520px;
-  border-radius: 28px;
-  overflow: hidden;
-  display: grid;
-  place-items: center;
-  isolation: isolate;
-
-  border-radius: 24px;
-
-  /* soft glass border */
-  border: 50px solid rgba(255, 255, 255, 0.35);
-
-  /* subtle depth */
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4);
-
-  /* slight background blend */
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
-}
-
-.hero-scene::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(
-      circle at 20% 18%,
-      rgba(255, 255, 255, 0.35),
-      transparent 20%
-    ),
-    radial-gradient(
-      circle at 80% 20%,
-      rgba(200, 240, 255, 0.25),
-      transparent 25%
-    ),
-    radial-gradient(
-      circle at 50% 80%,
-      rgba(120, 200, 255, 0.18),
-      transparent 30%
-    );
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Three.js mount */
-.hero-webgl {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  pointer-events: none;
-}
-
-.hero-webgl canvas {
-  width: 100% !important;
-  height: 100% !important;
-  display: block;
-}
-
-/* =========================
-   GLASS + FLOAT REFINEMENT
-   ========================= */
-
-.hero-frame {
-  /* KEEP your size rules above */
   z-index: 2;
 
+  text-align: center;
+  transform-style: preserve-3d;
+  will-change: transform;
+
+  /* GLASS STYLE */
   border: 1px solid rgba(255, 255, 255, 0.35);
 
   background:
@@ -133,10 +32,8 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.4);
 
   backdrop-filter: blur(16px) saturate(1.1);
-  -webkit-backdrop-filter: blur(16px) saturate(1.1);
 }
 
-/* glass highlight sheen */
 .hero-frame::before {
   content: "";
   position: absolute;
@@ -148,10 +45,8 @@
     rgba(255, 255, 255, 0.05) 45%,
     rgba(255, 255, 255, 0.2)
   );
-  pointer-events: none;
 }
 
-/* floating shadow (VERY important for realism) */
 .hero-frame::after {
   content: "";
   position: absolute;
@@ -170,64 +65,168 @@
   z-index: -1;
 }
 
-.hero-content {
+.hero-title {
+  font-family: var(--font-title);
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  line-height: 1;
+  margin: 0;
+}
+
+.hero-title .line-break {
+  display: block;
+}
+
+.hero-note {
+  margin-top: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* =========================
+   HERO SCENE
+   ========================= */
+
+.page-section--hero {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: clamp(16px, 4vw, 32px);
+  overflow: hidden;
+}
+
+.hero-scene {
+  --water-top: 58%;
+  --water-feather: 12%;
+
   position: relative;
-  z-index: 5;
+  width: min(100%, 1100px);
+  height: min(78svh, 760px);
+  min-height: 520px;
+
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+
+  border-radius: 24px;
+  overflow: hidden;
+
+  /* RESPONSIVE BORDER */
+  border: clamp(12px, 4vw, 50px) solid rgba(255, 255, 255, 0.35);
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.hero-scene::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background:
+    radial-gradient(circle at 20% 18%, rgba(255,255,255,0.35), transparent 20%),
+    radial-gradient(circle at 80% 20%, rgba(200,240,255,0.25), transparent 25%),
+    radial-gradient(circle at 50% 80%, rgba(120,200,255,0.18), transparent 30%);
+}
+
+/* =========================
+   WEBGL CANVAS
+   ========================= */
+
+.hero-webgl {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-webgl canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* =========================
+   ENTRY ANIMATION
+   ========================= */
+
+.hero-frame-wrap {
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(8px);
+  width: 50%;
+
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 700ms ease;
+}
+
+body.page-ready .hero-frame-wrap {
+  opacity: 1;
+  transform: translateY(-100px);
+  filter: blur(0);
+  -webkit-transform: translateY(-100px);
+  -moz-transform: translateY(-100px);
+  -ms-transform: translateY(-100px);
+  -o-transform: translateY(-100px);
 }
 
 /* =========================
    MOBILE
    ========================= */
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .hero-scene {
-    height: 72svh;
-    min-height: 480px;
+    height: 68svh;
+    min-height: 420px;
+
     --water-top: 48%;
-    --water-feather: 16%;
+    --water-feather: 18%;
   }
 
   .hero-frame {
-    width: min(88vw, 380px);
-    height: auto;
+    width: min(92vw, 360px);
+    padding: 18px;
   }
 
   .hero-title {
-    font-size: clamp(2rem, 9vw, 3.2rem);
+    font-size: clamp(1.8rem, 8vw, 2.8rem);
+  }
+
+  .hero-note {
+    font-size: 0.95rem;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-frame {
-    transform: none !important;
-  }
-}
+/* =========================
+   ABOUT
+   ========================= */
 
 .about-profile {
   display: flex;
-  align-items: flex-start;
   gap: 20px;
   flex-wrap: wrap;
   margin-top: 14px;
 }
 
 .about-photo {
-  flex: 0 0 240px;
-  max-width: 240px;
-  min-width: 180px;
+  flex: 0 0 220px;
 }
 
 .about-photo img {
   width: 100%;
-  height: auto;
   aspect-ratio: 6/9;
   object-fit: cover;
   border-radius: var(--radius);
-  display: block;
 }
 
 .about-text {
-  flex: 1 1 360px;
+  flex: 1;
   display: grid;
   gap: 16px;
 }
@@ -237,13 +236,8 @@
     flex-direction: column;
   }
 
-  .about-profile,
-  .about-text {
-    width: 100%;
-  }
-
   .about-photo {
-    max-width: 100%;
-    flex: 1 1 auto;
+    width: 100%;
+    max-width: 320px;
   }
 }
