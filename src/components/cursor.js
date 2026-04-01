@@ -40,7 +40,18 @@ export function initCursor() {
   const observer = new MutationObserver(addHoverEvents);
   observer.observe(document.body, { childList: true, subtree: true });
 
-  // 6. The Animation Loop
+  // 6. Click reaction for non-interactive zones
+  window.addEventListener("click", (event) => {
+    const target = event.target;
+    const isInteractive = !!target.closest("a, button, .btn, input, textarea, select, label");
+
+    if (!isInteractive) {
+      cursor.classList.add("is-clicked");
+      window.setTimeout(() => cursor.classList.remove("is-clicked"), 130);
+    }
+  });
+
+  // 7. The Animation Loop
   function render() {
     // Increased from 0.15 to 0.4 for a much snappier, responsive feel
     cursorX += (mouseX - cursorX) * 0.4;

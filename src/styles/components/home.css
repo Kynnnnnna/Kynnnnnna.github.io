@@ -24,3 +24,48 @@
   color: var(--muted);
   line-height: 1.55;
 }
+
+/* About page profile layout */
+.about-profile {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.about-photo {
+  flex: 0 0 240px;
+  max-width: 240px;
+  min-width: 180px;
+}
+
+.about-photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 6/9;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+}
+
+.about-text {
+  flex: 1 1 360px;
+  display: grid;
+  gap: 16px;
+}
+
+@media (max-width: 860px) {
+  .about-profile {
+    flex-direction: column;
+  }
+
+  .about-profile, .about-text {
+    width: 100%;
+  }
+
+  .about-photo {
+    max-width: 100%;
+    flex: 1 1 auto;
+  }
+}

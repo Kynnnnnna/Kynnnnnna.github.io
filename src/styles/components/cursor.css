@@ -39,3 +39,13 @@
   backdrop-filter: blur(2px); /* Barely there, just enough to catch the eye */
   -webkit-backdrop-filter: blur(2px);
 }
+
+/* --- Click pulse when clicking non-interactive area --- */
+.custom-cursor.is-clicked {
+  width: 28px;
+  height: 28px;
+  margin: -14px 0 0 -14px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
+}
