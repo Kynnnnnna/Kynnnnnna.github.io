@@ -312,6 +312,9 @@ export function initWaterScene(mountEl, sceneRoot, cardEl) {
 	let duckMixer = null;
 	let duckShadow = null;
 
+    let duckPressTime = -10;
+	let duckPressStrength = 0;
+
 	const loader = new GLTFLoader();
 	loader.load(
 		"/models/duck.glb",
@@ -383,6 +386,9 @@ export function initWaterScene(mountEl, sceneRoot, cardEl) {
 			(e.clientY - rect.top) / rect.height,
 		);
 		uniforms.uClickTime.value = clock.getElapsedTime();
+
+        duckPressTime = clock.getElapsedTime();
+		duckPressStrength = 1.0;
 	}
 
 	sceneRoot.addEventListener("mousemove", onPointerMove);
@@ -420,10 +426,10 @@ export function initWaterScene(mountEl, sceneRoot, cardEl) {
 		uniforms.uTime.value = elapsed;
 		uniforms.uMouse.value.set(mouseCurrentX, mouseCurrentY);
 
+		// Non-mouse-dependent floating movement for the water group.
 		group.rotation.z = Math.sin(elapsed * 0.18) * 0.025;
-		group.rotation.y =
-			Math.sin(elapsed * 0.22) * 0.08 + (mouseCurrentX - 0.5) * 0.18;
-		group.rotation.x = (mouseCurrentY - 0.5) * 0.08;
+		group.rotation.y = Math.sin(elapsed * 0.22) * 0.08;
+		group.rotation.x = 0.0; // fixed pitch
 		group.position.x = Math.sin(elapsed * 0.15) * 0.05;
 		group.position.y = Math.cos(elapsed * 0.13) * 0.03;
 
@@ -442,27 +448,78 @@ export function initWaterScene(mountEl, sceneRoot, cardEl) {
 			const baseY = -0.95;
 			const baseZ = 1.15;
 
-			duck.position.x =
-				baseX + Math.sin(t * 0.55) * 0.1 + (mouseCurrentX - 0.5) * 0.28;
+			// Normal idle floating
+			const idleX = Math.sin(t * 0.55) * 0.1;
+			const idleY = Math.sin(t * 1.05) * 0.07;
+			const idleZ = Math.cos(t * 0.6) * 0.03;
 
-			duck.position.y =
-				baseY + Math.sin(t * 1.05) * 0.07 + (mouseCurrentY - 0.5) * -0.1;
+			const idleRotX = Math.sin(t * 0.85) * 0.02;
+			const idleRotY = Math.sin(t * 0.35) * 0.1;
+			const idleRotZ = Math.sin(t * 1.1) * 0.05;
 
-			duck.position.z = baseZ + Math.cos(t * 0.6) * 0.03;
+			// Click "pressed into water" response:
+			// quick downward dip, then damped up/down oscillation, then settle
+			const dtPress = t - duckPressTime;
+			let pressY = 0;
+			let pressRotX = 0;
+			let pressRotZ = 0;
+			let pressScaleY = 1;
+			let pressScaleXZ = 1;
 
-			duck.rotation.x = 0.08 + Math.sin(t * 0.85) * 0.02;
-			duck.rotation.y = 0.55 + Math.sin(t * 0.35) * 0.1;
-			duck.rotation.z = -0.16 + Math.sin(t * 1.1) * 0.05;
+			if (dtPress >= 0.0 && dtPress < 3.0) {
+				const fade = Math.exp(-dtPress * 2.4);              // settles over time
+				const osc = Math.sin(dtPress * 12.0);               // fast bobbing
+				const initialDip = -Math.exp(-dtPress * 10.0) * 0.16; // immediate push down
+
+				pressY = initialDip + osc * fade * 0.12 * duckPressStrength;
+				pressRotX = (-0.22 * Math.exp(-dtPress * 8.0) + osc * fade * 0.05) * duckPressStrength;
+				pressRotZ = (Math.sin(dtPress * 10.0) * fade * 0.06) * duckPressStrength;
+
+				// tiny squash/stretch for a soft pressed feel
+				pressScaleY = 1.0 - Math.exp(-dtPress * 10.0) * 0.08;
+				pressScaleXZ = 1.0 + Math.exp(-dtPress * 10.0) * 0.04;
+			}
+
+			duck.position.x = baseX + idleX;
+			duck.position.y = baseY + idleY + pressY;
+			duck.position.z = baseZ + idleZ;
+
+			duck.rotation.x = 0.08 + idleRotX + pressRotX;
+			duck.rotation.y = 0.55 + idleRotY;
+			duck.rotation.z = -0.16 + idleRotZ + pressRotZ;
+
+			duck.scale.set(
+				1.35 * pressScaleXZ,
+				1.35 * pressScaleY,
+				1.35 * pressScaleXZ,
+			);
 		}
 
 		if (duckShadow) {
 			const pulse = 1 + Math.sin(elapsed * 1.05) * 0.08;
-			duckShadow.scale.set(pulse, pulse * 0.82, 1);
+
+			const dtPress = elapsed - duckPressTime;
+			let shadowSquish = 1.0;
+			let shadowOpacityBoost = 0.0;
+
+			if (dtPress >= 0.0 && dtPress < 3.0) {
+				const fade = Math.exp(-dtPress * 2.4);
+				shadowSquish = 1.0 + Math.exp(-dtPress * 10.0) * 0.18 + fade * 0.08;
+				shadowOpacityBoost = Math.exp(-dtPress * 8.0) * 0.08;
+			}
+
+			duckShadow.scale.set(
+				pulse * shadowSquish,
+				pulse * 0.82 * shadowSquish,
+				1,
+			);
 
 			duckShadow.position.x = -1.42 + Math.sin(elapsed * 0.55) * 0.05;
 			duckShadow.position.y = -1.28;
 			duckShadow.material.opacity =
-				0.15 + (Math.sin(elapsed * 1.05) * 0.5 + 0.5) * 0.05;
+				0.15 +
+				(Math.sin(elapsed * 1.05) * 0.5 + 0.5) * 0.05 +
+				shadowOpacityBoost;
 		}
 
 		renderer.render(scene, camera);
