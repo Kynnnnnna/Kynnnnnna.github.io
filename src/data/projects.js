@@ -21,6 +21,7 @@ export const projects = [
       "/assets/images/projects/ece496-head-up/4.jpg",
       "/assets/images/projects/ece496-head-up/5.jpg",
     ],
+    video: "/assets/images/projects/ece496-head-up/demo.mp4",
   },
   {
     id: "ece444-pixel-pet",

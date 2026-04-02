@@ -55,6 +55,17 @@ if (currentIndex === -1 || !container) {
        </div>`
     : "";
 
+  const videoHTML = project.video
+    ? `
+      <div class="project-video">
+        <video controls playsinline preload="metadata" class="detail-video">
+          <source src="${project.video}" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    `
+    : "";
+
   // Inject layout without the top nav, but with the massive footer nav
   container.innerHTML = `
     <header class="detail-header">
@@ -74,6 +85,7 @@ if (currentIndex === -1 || !container) {
           ${liveLink}
           ${codeLink}
         </div>
+        ${videoHTML}
       </div>
 
       ${galleryHTML}

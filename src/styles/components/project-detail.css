@@ -154,6 +154,20 @@
   transform: scale(1);
 }
 
+.project-video {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.detail-video {
+  width: 100%;
+  max-width: 800px;
+  max-height: 500px;
+  border-radius: 16px;
+  display: block;
+}
+
 /* --- Mobile Breakpoints --- */
 @media (max-width: 768px) {
   .project-pagination {
