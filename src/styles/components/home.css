@@ -203,6 +203,37 @@ body.page-ready .hero-frame-wrap {
   }
 }
 
+@media (max-width: 480px) {
+  .page-section--hero {
+    padding: clamp(12px, 3vw, 20px);
+  }
+
+  .hero-scene {
+    height: 60svh;
+    min-height: 380px;
+    border: clamp(8px, 3vw, 24px) solid rgba(255, 255, 255, 0.35);
+
+    --water-top: 45%;
+    --water-feather: 20%;
+  }
+
+  .hero-frame {
+    width: min(90vw, 320px);
+    padding: 16px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.6rem, 9vw, 2.4rem);
+  }
+
+  .hero-frame-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 /* =========================
    ABOUT
    ========================= */
@@ -239,5 +270,25 @@ body.page-ready .hero-frame-wrap {
   .about-photo {
     width: 100%;
     max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-profile {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-photo {
+    margin: 0 auto;
+  }
+
+  .about-text {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .about-text > .glass.card {
+    text-align: center;
   }
 }

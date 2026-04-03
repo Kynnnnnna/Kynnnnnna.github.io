@@ -321,8 +321,14 @@ export function initWaterScene(mountEl, sceneRoot, cardEl) {
 		(gltf) => {
 			duck = gltf.scene;
 
-			duck.scale.setScalar(1.35);
-			duck.position.set(-1.55, -0.95, 1.15);
+			const isMobile = window.innerWidth < 768;
+			const scale = isMobile ? 1.1 : 1.35;
+			const posX = isMobile ? -1.2 : -1.55;
+			const posY = isMobile ? -0.85 : -0.95;
+			const posZ = isMobile ? 1.0 : 1.15;
+
+			duck.scale.setScalar(scale);
+			duck.position.set(posX, posY, posZ);
 			duck.rotation.set(0.08, 0.55, -0.16);
 
 			scene.add(duck);
@@ -342,7 +348,10 @@ export function initWaterScene(mountEl, sceneRoot, cardEl) {
 
 			duckShadow = new THREE.Mesh(shadowGeometry, shadowMaterial);
 			duckShadow.rotation.x = -Math.PI / 2;
-			duckShadow.position.set(-1.42, -1.28, 0.92);
+			const shadowX = isMobile ? -1.07 : -1.42;
+			const shadowY = isMobile ? -1.18 : -1.28;
+			const shadowZ = isMobile ? 0.77 : 0.92;
+			duckShadow.position.set(shadowX, shadowY, shadowZ);
 
 			scene.add(duckShadow);
 		},
@@ -443,10 +452,11 @@ export function initWaterScene(mountEl, sceneRoot, cardEl) {
 
 		if (duck) {
 			const t = elapsed;
+			const isMobile = window.innerWidth < 768;
 
-			const baseX = -1.55;
-			const baseY = -0.95;
-			const baseZ = 1.15;
+			const baseX = isMobile ? -1.2 : -1.55;
+			const baseY = isMobile ? -0.85 : -0.95;
+			const baseZ = isMobile ? 1.0 : 1.15;
 
 			// Normal idle floating
 			const idleX = Math.sin(t * 0.55) * 0.1;
@@ -488,10 +498,11 @@ export function initWaterScene(mountEl, sceneRoot, cardEl) {
 			duck.rotation.y = 0.55 + idleRotY;
 			duck.rotation.z = -0.16 + idleRotZ + pressRotZ;
 
+			const scale = isMobile ? 1.1 : 1.35;
 			duck.scale.set(
-				1.35 * pressScaleXZ,
-				1.35 * pressScaleY,
-				1.35 * pressScaleXZ,
+				scale * pressScaleXZ,
+				scale * pressScaleY,
+				scale * pressScaleXZ,
 			);
 		}
 

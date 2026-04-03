@@ -33,7 +33,7 @@
 
 @media (max-width: 600px) {
   .page-section {
-    padding: 78px 14px;
+    padding: 92px 14px 78px;
   }
   .page-section--hero {
     padding-top: 110px;
